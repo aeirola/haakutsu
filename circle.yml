@@ -9,5 +9,5 @@ jobs:
           name: Deploy to AWS S3 bucket
           command: >
             aws s3 sync . s3://rebekkaxel.fi  --delete
-            --exclude '*' --include '*.html' --include '*.css' --include '*.ico'
+            --exclude '*' --include '*.html' --include '*.css' --include '*.png'
             --cache-control max-age=0,no-cache
