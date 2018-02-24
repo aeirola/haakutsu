@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: mesosphere/aws-cli
+    steps:
+      - checkout
+      - run: 
+          name: Deploy to AWS S3 bucket
+          command: >
+            aws s3 sync . s3://rebekkaxel.fi  --delete
+            --exclude '*' --include '*.html' --include '*.css' --include '*.ico'
+            --cache-control max-age=0,no-cache
