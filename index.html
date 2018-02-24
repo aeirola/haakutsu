@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+	<meta charset="utf-8">
+
+	<title>Kutsu</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+
+		@media screen and (min-width: 500pt) and (min-height: 350pt) {
+			#content {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+
+				height: 100%;
+				max-width: 600pt;
+			}
+
+			header {
+				flex: 7;
+			}
+
+			section {
+				flex: 4;
+			}
+		}
+
+
+		@keyframes dash {
+			from { stroke-dashoffset: 2.6; }
+			to { stroke-dashoffset: 0; }
+		}
+
+		#flower {
+			width: 80%;
+			max-width: 25em;
+			margin: auto;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+		#flower .petal {
+			stroke-width: 0.075;
+			stroke-dasharray: 2.6;
+			stroke-dashoffset: 2.6;
+			animation: dash 3s linear forwards;
+			animation-timing-function: cubic-bezier(0.1, 0.1, 0.6, 0.7);
+		}
+
+		#flower .petal:nth-child(1) {animation-delay: 0.0s;}
+		#flower .petal:nth-child(4) {animation-delay: 0.2s;}
+		#flower .petal:nth-child(2) {animation-delay: 0.4s;}
+		#flower .petal:nth-child(5) {animation-delay: 0.6s;}
+		#flower .petal:nth-child(3) {animation-delay: 0.8s;}
+		#flower .petal:nth-child(6) {animation-delay: 1.0s;}
+
+		#flower .petal.r {
+			stroke: #9ebd9e;
+		}
+
+		#flower .petal.a {
+			stroke: #dd855c;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<header>
+			<svg id="flower"
+				viewBox="0 0 50 50"
+				xmlns="http://www.w3.org/2000/svg"
+				style="z-index: 10;">
+				<!-- Inspiratin from Flower to Korea logo -->
+				<defs>
+					<path
+						id="leaf"
+						d="
+							M 0.5 0.962
+							C 0.6 0.962, 0.85 0.85, 0.85 0.6
+							C 0.85 0.35, 0.6 0.1, 0.5 0
+							C 0.4 0.1, 0.15 0.35, 0.15 0.6
+							C 0.15 0.85, 0.4 0.962, 0.5 0.962
+						"
+						fill="none" />
+					<mask id="mask">
+						<rect x="-0.5" y="-0.5"
+							width="2" height="2"
+							fill="white" />
+						<use xlink:href="#leaf"
+							transform="rotate(300, 0.5, 1)"
+							stroke="black"
+							stroke-width="0.12"
+							stroke-linecap="butt"
+							stroke-dasharray="0 0.5 0.5 3"/>
+					</mask>
+				</defs>
+				<g transform="translate(15, 5) scale(20)">
+					<use xlink:href="#leaf"
+						class="petal r"
+						mask="url(#mask)"
+						transform="rotate(0, 0.5, 1)"/>
+					<use xlink:href="#leaf"
+						class="petal r"
+						mask="url(#mask)"
+						transform="rotate(120, 0.5, 1)" />
+					<use xlink:href="#leaf"
+						class="petal r"
+						mask="url(#mask)"
+						transform="rotate(240, 0.5, 1)" />
+					<use xlink:href="#leaf"
+						class="petal a"
+						mask="url(#mask)"
+						transform="rotate(60, 0.5, 1)" />
+					<use xlink:href="#leaf"
+						class="petal a"
+						mask="url(#mask)"
+						transform="rotate(180, 0.5, 1)" />
+					<use xlink:href="#leaf"
+						class="petal a"
+						mask="url(#mask)"
+						transform="rotate(300, 0.5, 1)" />
+	    		</g>
+			</svg>
+		</header>
+
+		<section>
+			<h1>
+				Rebekka &amp; Axel
+			</h1>
+			<p>
+				Hämeen Linnassa
+				<br/>
+				12.5.2018
+				<br/>
+				15:00
+				<br/>
+				Vastaanotto VPK:lla
+			</p>
+
+			<p>
+				<a class="button" href="https://goo.gl/forms/I5UZaqCiXi0kmHSv1">
+					Ilmoittautuminen
+				</a>
+				<br/>
+				1.4. mennessä
+			</p>
+
+			<hr/>
+
+			<h2>Lisätiedot</h2>
+
+			<p>
+				<a class="button" href="saapuminen.html">Saapumisesta</a>
+				<br/>
+				<a class="button" href="lahjat.html">Lahjoista</a>
+			</p>
+		</section>
+	</div>
+</body>
+</html>

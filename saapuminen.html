@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+	<meta charset="utf-8">
+	<title>Saapumine</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style type="text/css">
+		@media screen and (min-width: 500pt) and (min-height: 350pt) {
+			section {
+				clear: both;
+			}
+			section.column {
+				width: 40%;
+				margin: 5%;
+				float: right;
+				text-align: left;
+				clear: none;
+			}
+		}
+
+		img.map {
+			width: 100%;
+			margin: 0 auto;
+			max-width: 300pt;
+			display: block;
+			border: 1pt dashed #726f81;
+			padding: 5pt;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="content">
+
+		<header>
+			<h1>Saapumisesta</h1>
+		</header>
+
+
+		<section>
+			<h2>Juhlapaikalle</h2>
+
+			<p>
+				Juhlapaikalle saavutaan Linnan normaalien sisäänkäyntien kautta. Ohjeistus oikealle paikalle alkaa museokaupan edestä. Lisätietoja Hämeen Linnasta ja näyttelyistä, mikäli kinnostaa, löytyy osoitteesta <a href="http://www.kansallismuseo.fi/fi/hameen-linna">http://www.kansallismuseo.fi/fi/hameen-linna</a>.
+			</p>
+
+		</section>
+
+
+		<section class="column">
+			<h2>Junalla</h2>
+
+			<p>
+				Junalla pääsee helpoiten paikanpäälle. Helsingistä päin tullessa kannattaa ottaa <a href="https://www.vr.fi/cs/vr/fi/aikatauluhaku#fromStationVR=Helsinki&toStationVR=H%C3%A4meenlinna&period=2w&weekDay=Sa&dstarttime=13:00&dendtime=15:00&onlyDirect=true&transferType=NORMAL&trainTypes=IC2&trainTypes=LOC&trainTypes=LKB&trainTypes=PL&trainTypes=KLA&trainTypes=S&trainTypes=IC">InterCity 173</a> joka saapuu Hämeenlinnaan 13:57. Muistakaa ostaa liput ajoissa niin saatte ne halvalla. Asemalta on mukava vajaan 2 km puistoisa kävelymatka Vanjaveden rannoilla linnalle saakka.
+			</p>
+
+			<a href="https://www.google.com/maps/dir/Rautatieasema+A,+H%C3%A4meenlinna/61.0024357,24.4602369/@60.9999204,24.4605451,15z/data=!3m1!4b1!4m19!4m18!1m15!1m1!1s0x468e5da373816d49:0xbcbdfbfe4dde20d7!2m2!1d24.478805!2d61.0017496!3m4!1m2!1d24.4748811!2d61.0006086!3s0x468e5da3226d8aeb:0x5b8030b531e417fa!3m4!1m2!1d24.4603032!2d61.0024232!3s0x468e5dbe7280c9f9:0xdfc8214caacf60ec!1m0!3e2">
+
+				<img class="map" alt="Kartta kävelyreitistä Hämeenlinnan rautatieasemalta Hämeen linnalle"
+					src="https://maps.googleapis.com/maps/api/staticmap?
+						center=61.00096,24.46844&zoom=14&
+						size=400x400&scale=2&
+						path=color:red|enc:uoisJk{ktC\z@I^Ff@nA|Cj@UHh@|DxId@e@p@wBT?`@^^Rb@dAt@nEfAvCn@x@p@APW`@m@|@}@xAxMcAbAUeCkBpB{B`B_@n@DhAoC~BWt@kAhQPzFC`AuAdGEbA}BxBcAhAgAbAn@dCwB`BaBp@{@`Cc@s@y@hBc@oA&
+						style=feature:poi|visibility:off&
+						key=AIzaSyDAUDq0exgAtfFWJERNxQXbbLpJdzJOTUQ" />
+			</a>
+
+
+			
+		</section>
+
+		<section class="column">
+			<h2>Autolla</h2>
+
+			<p>
+				Autolla pääsee linnan pihaan asti. Parkkipaikka vieraille löytyy kuvan punaselta alueelta.
+			</p>
+
+			<p>
+				Autolla pääsee tarvittaessa linnan sisäpihalle asti, jos ei todellakaan jaksa kävellä. Muutamat portaat pitää kuitenkin kivuta.
+			</p>
+
+			<a href="https://www.google.com/maps/dir//61.0030796,24.4601919/@61.0036648,24.4579115,17.14z/data=!4m6!4m5!2m3!6e1!7e2!8j1526137200!3e0">
+
+				<img class="map" alt="Kartta Hämeen Linnan vierasparkkipaikasta"
+					src="https://maps.googleapis.com/maps/api/staticmap?
+						center=61.00328,24.45987&zoom=16&
+						size=400x400&scale=2&
+						path=fillcolor:red|color:0xFFFFFF00|enc:mtisJahhtC]aBAG@MBIt@}@BA@@B@?B@DLtAEDGDEFMZ&
+						style=feature:poi|visibility:off&
+						key=AIzaSyDAUDq0exgAtfFWJERNxQXbbLpJdzJOTUQ" />
+			</a>
+
+		</section>
+
+
+		<hr/>
+
+
+		<section>
+			<h2>Vastaanotolle</h2>
+
+			<p>
+				Vastaanotto on kävelymatkan päässä Linnasta. Juhlakulkue kulkee rantaa pitkin VPKlle. Jos haluaa tulla autolla, niin parkkipaikkoja löytyy joka on ilmaista lauantaisin kl 16:00 eteenpäin.
+			</p>
+
+			<!--
+				Monipolut hankittu osoitteesta
+				https://developers.google.com/maps/documentation/utilities/polylineutility
+			-->
+
+			<a href="https://www.google.com/maps/dir/H%C3%A4meen+linna,+H%C3%A4me+Castle,+Kustaa+III:n+katu,+H%C3%A4meenlinna/H%C3%A4meenlinnan+VPK+ry,+Palokunnankatu,+H%C3%A4meenlinna/@60.9978261,24.4639909,16.22z/data=!4m19!4m18!1m10!1m1!1s0x468e5dbe583ff1ab:0xdebb4a90d9d777be!2m2!1d24.4596652!2d61.0035595!3m4!1m2!1d24.4697495!2d60.9993053!3s0x468e5dbd51833d55:0x3f98a6806951356f!1m5!1m1!1s0x468e5d977ccd5d01:0x400840fe4f37a4f1!2m2!1d24.4661149!2d60.995454!3e2">
+				<img class="map" alt="Kartta kävelyreitistä Hämeen Linnast VPKlle"
+					src="https://maps.googleapis.com/maps/api/staticmap?
+						markers=color:0xe3adc3|Hämeen linna|Hämeenlinnan VPK ry&
+						path=color:0xe3adc3|weight:4|enc:yuisJmfhtCbBqC|@k@YaL`Gp@xByBHeAxAoHQqGnAkQ~CqD?qAzCgCfBsBh@sAdIeIfEz@b@fFdChS}@n@aFvFl@bG&
+						size=400x400&scale=2&
+						style=element:geometry|color:0xf5f5f5&
+						style=element:labels.text.fill|color:0x616161&
+						style=feature:administrative|visibility:off&
+						style=feature:poi|visibility:off&
+						style=feature:road|element:geometry|color:0xffffff&
+						style=feature:road|element:labels.icon|visibility:off&
+						style=feature:road.highway|element:geometry|color:0xdadada&
+						style=feature:water|element:geometry|color:0xc9c9f9&
+						key=AIzaSyDAUDq0exgAtfFWJERNxQXbbLpJdzJOTUQ" />
+			</a>
+			
+		</section>
+
+		<section>
+			<h2>Nukkumaan</h2>
+
+			<p>
+				Viimeinen juna Hämeenlinnasta Helsinkiin on 21:59 lähtevä Pendolino 148. Bussilla <a href="https://liput.matkahuolto.fi/connectiondetails?lang=en&arrivalPlaceId=p1001&departurePlaceId=p1047&departureDate=2018-05-13&connectionId=eyJxdWVyeVZPIjp7InBsYWNlTmFtZUlkcyI6WzEwNDcsMTAwMSxudWxsLG51bGxdLCJzdG9wQXJlYUlkcyI6W251bGwsbnVsbCxudWxsLG51bGxdLCJzdG9wSWRzIjpbbnVsbCxudWxsLG51bGwsbnVsbF0sInN0b3BBcmVhTmFtZXMiOlsiSMOkbWVlbmxpbm5hIiwiSGVsc2lua2kiLG51bGwsbnVsbF0sInBsYWNlTmFtZXMiOltudWxsLG51bGwsbnVsbCxudWxsXSwiZGVwYXJ0dXJlRGF0ZSI6IjIwMTgtMDUtMTMiLCJjaGFuZ2VzIjoyLCJ1cGRhdGVTdGF0aXN0aWNzIjpmYWxzZSwicmV0dXJuUmVzZXJ2YXRpb25BbGxvd2VkIjp0cnVlLCJyZXR1cm5EZXBhcnR1cmVSZXNlcnZhdGlvbk1hcElkIjp0cnVlLCJyZXR1cm5QcmljZXNBbGxvd2VkIjp0cnVlLCJyZXR1cm5TYWxlc0FsbG93ZWQiOnRydWUsInJldHVyblJlc2VydmF0aW9uTWFwU2VudCI6dHJ1ZSwicmV0dXJuQmFyZ2FpblByaWNlIjp0cnVlLCJvbmx5QmFyZ2FpblRpY2tldHMiOmZhbHNlLCJkZXBhcnR1cmVJZHMiOltudWxsLG51bGwsbnVsbCxudWxsXSwicmV0dXJuU2FsZXNPblRoZU1vdmVBbGxvd2VkIjp0cnVlLCJxdWVyeVN0cmluZyI6ImFsbFNjaGVkdWxlcz0wJmFycml2YWxTdG9wQXJlYUlkPXAxMDAxJmFycml2YWxTdG9wQXJlYU5hbWU9SGVsc2lua2kmZGVwYXJ0dXJlRGF0ZT0yMDE4LTA1LTEzJmRlcGFydHVyZVN0b3BBcmVhSWQ9cDEwNDcmZGVwYXJ0dXJlU3RvcEFyZWFOYW1lPUjDg8KkbWVlbmxpbm5hJnRpY2tldFRyYXZlbFR5cGU9MCIsInJldHVyblRyaXAiOmZhbHNlLCJyZXR1cm5TYWxlc0F0VGhlU3RhdGlvbkFsbG93ZWQiOmZhbHNlLCJyZXR1cm5QcmljZURldGFpbHMiOmZhbHNlLCJwYWdlSW5kZXgiOjAsInBhZ2VTaXplIjowLCJzb3J0T3JkZXIiOnRydWUsInF1aWNrIjpmYWxzZX0sImRlcGFydHVyZUlkcyI6WzE2MzU4OCxudWxsLG51bGwsbnVsbF0sImRlcGFydHVyZVN0b3BBcmVhSWQiOjE1NTQsImFycml2YWxTdG9wQXJlYUlkIjoxMTU2fQ#breadcrumb">02:25</a>
+			</p>
+
+
+			<p>
+				Yöpymostä saattaa olla tarjolla
+
+			</p>
+
+		</section>
+
+		<hr/>
+
+		<section>
+			<h2>Kysyttävää?</h2>
+			<p>
+				Ota yhteyttä Axeliin tai Rebekkaan parhalla näkemälläsi tavalla. Varoiksi alla muutamia linkkejä.
+			</p>
+			<p>
+				<a class="button" href="tel:+358407265959">
+					0407265959
+				</a>
+				<br/>
+				<a class="button" href="mailto:Axel%20Eirola<axel.eirola@iki.fi">
+					axel.eirola@iki.fi
+				</a>
+			</p>
+		</section>
+	</div>
+</body>
+</html>
