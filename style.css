@@ -21,10 +21,12 @@ body {
 
 
 #content {
-	margin: 20pt auto;
+	margin: 0 auto;
+	padding: 20pt 0;
 	width: 80%;
 	max-width: 500pt;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 
