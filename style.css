@@ -13,6 +13,7 @@ html, body {
 }
 
 body {
+	display: block !important;
 	background: #f6f6ea;
 	color: #726f81;
 	overflow-x: hidden;
@@ -85,4 +86,92 @@ hr:after {
 
 	content: '\2747';
 	background: #f6f6ea;
+}
+
+/* Index */
+@media screen and (min-width: 500pt) and (min-height: 370pt) {
+	#content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		height: 100%;
+		max-width: 600pt;
+	}
+
+	header {
+		flex: 7;
+	}
+
+	section {
+		flex: 4;
+	}
+}
+
+
+@keyframes dash {
+	from { stroke-dashoffset: 2.6px; }
+	to { stroke-dashoffset: 0; }
+}
+
+#flower {
+	width: 80%;
+	max-width: 25em;
+	margin: auto;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+#flower .petal {
+	stroke-width: 0.08px;
+	stroke-dasharray: 2.6px;
+	stroke-dashoffset: 2.6px;
+	animation: dash 3s linear forwards;
+	animation-timing-function: cubic-bezier(0.1, 0.1, 0.6, 0.7);
+}
+
+#flower .petal:nth-child(1) {animation-delay: 0.0s;}
+#flower .petal:nth-child(4) {animation-delay: 0.2s;}
+#flower .petal:nth-child(2) {animation-delay: 0.4s;}
+#flower .petal:nth-child(5) {animation-delay: 0.6s;}
+#flower .petal:nth-child(3) {animation-delay: 0.8s;}
+#flower .petal:nth-child(6) {animation-delay: 1.0s;}
+
+#flower .petal.r {
+	stroke: #9ebd9e;
+}
+
+#flower .petal.a {
+	stroke: #dd855c;
+}
+
+
+/* Saapuminen */
+@media screen and (min-width: 500pt) and (min-height: 350pt) {
+	section {
+		clear: both;
+	}
+	section.column {
+		width: 40%;
+		margin: 5%;
+		float: left;
+		text-align: left;
+		clear: none;
+	}
+}
+
+img.map {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 300pt;
+	display: block;
+	border: 1pt dashed #726f81;
+	padding: 5pt;
+}
+
+/* Lahjat */
+ul {
+	padding: 0;
+	list-style: none;
 }
