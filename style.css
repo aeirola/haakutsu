@@ -35,6 +35,13 @@ header, h1, h2, h3 {
 	font-family: 'Marck Script', cursive;
 }
 
+h2.compact {
+	margin: 0.3em 0;
+}
+
+p.compact {
+	margin: 0.3em 0;
+}
 
 a.button {
 	display: inline-block;
@@ -73,6 +80,10 @@ hr {
     text-align: center;
 }
 
+hr.compact {
+	margin: 1.5em auto;
+}
+
 hr:after {
 	color: #dd855c;
 	display: inline-block;
@@ -89,7 +100,7 @@ hr:after {
 }
 
 /* Index */
-@media screen and (min-width: 500pt) and (min-height: 370pt) {
+@media screen and (min-width: 500pt) and (min-height: 400pt) {
 	#content.vertical {
 		display: flex;
 		flex-direction: row;
