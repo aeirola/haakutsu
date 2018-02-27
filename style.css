@@ -112,7 +112,12 @@ hr:after {
 
 @keyframes dash {
 	from { stroke-dashoffset: 2.6px; }
-	to { stroke-dashoffset: 0; }
+	to { stroke-dashoffset: 0px; }
+}
+
+@keyframes appear {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 #flower {
@@ -126,9 +131,21 @@ hr:after {
 #flower .petal {
 	stroke-width: 0.08px;
 	stroke-dasharray: 2.6px;
+	opacity: 0;
 	stroke-dashoffset: 2.6px;
-	animation: dash 3s linear forwards;
+	animation: dash 3s, appear 0.1s;
+	animation-fill-mode: forwards;
 	animation-timing-function: cubic-bezier(0.1, 0.1, 0.6, 0.7);
+}
+
+/* IE compatibility */
+#flower .petal {
+	stroke-dashoffset: 0px;
+}
+@supports not (old: ie) {
+	#flower .petal {
+		stroke-dashoffset: 2.6px;
+	}
 }
 
 #flower .petal:nth-child(1) {animation-delay: 0.0s;}
