@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1080, height=1920, initial-scale=1">
+
+	<meta name="author" content="Axel Eirola">
+	<meta name="description" content="Rebekan ja Axelin häiden infotaulu.">
+
+	<title>Rebekka &amp; Axel &mdash; Hääkutsu</title>
+
+	<style>
+		/*
+			Värit hankttu osoitteesta http://www.color-hex.com/color-palette/45016
+			Fontit hankittu osoitteesta https://fonts.google.com/specimen/Marck+Script?selection.family=Marck+Script|Play
+		*/
+
+		@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+
+		/* Layout */
+
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		body {
+			background: #f6f6ea;
+			color: #726f81;
+			overflow-x: hidden;
+			font-family: 'Marck Script', cursive;
+
+			padding-top: 20%;
+			padding-bottom: 15%;
+			box-sizing: border-box;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+
+		/* Flower rendering */
+
+		#flower {
+			flex: 3;
+			width: 80%;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+		#flower .petals.r,
+		#flower .petal.mask.r {
+			stroke-width: 0.08px;
+			stroke: #9ebd9e;
+		}
+
+		#flower .petals.a {
+			stroke-width: 0.08px;
+			stroke: #dd855c;
+		}
+
+		#flower .petal.mask {
+			stroke: #f6f6ea;
+			stroke-width: 0.12px;
+			stroke-dasharray: 0 0.35 0.85 1.4;
+			stroke-linecap: butt;
+			stroke-linejoin: butt;
+		}
+
+
+		/* Flower animation */
+
+		@keyframes wiggle {
+			from { transform: rotate(8deg); }
+			to { transform: rotate(-8deg); }
+		}
+
+		#flower .petals {
+			animation: wiggle 4s infinite alternate;
+			transform-origin: 0.5px 1px;
+			animation-timing-function: ease-in-out;
+		}
+
+		#flower .petals.r { animation-delay: 0s; }
+		#flower .petals.a { animation-delay: -4s; }
+
+		/* Flower petal animation */
+		@keyframes dash {
+			from { stroke-dasharray: 0px   0px   0px 2.6px; }
+			20%  { stroke-dasharray: 0px   0px 2.6px   0px; }
+			80%  { stroke-dasharray: 0px   0px 2.6px   0px; }
+			to   { stroke-dasharray: 0px 2.6px   0px   0px; }
+		}
+
+		@keyframes dash-mask-under {
+			from   { stroke-dasharray:      0px 2.2px;
+					 stroke-dashoffset:  -0.4px}
+			3.08%  { stroke-dasharray:      0px 2.2px;
+					 stroke-linecap: butt;}
+		 	3.081% { stroke-linecap: round; }
+			8.85%  { stroke-dasharray:   0.75px 1.45px; }
+			83.08% { stroke-dasharray:   0.75px 1.45px;
+					 stroke-dashoffset:  -0.4px ;}
+			88.849%{ stroke-linecap: round; }
+			88.85% { stroke-dasharray:      0px 2.6px;
+					 stroke-dashoffset: -1.15px;
+					 stroke-linecap: butt;}
+			to     { stroke-dasharray:      0px 2.6px;
+					 stroke-dashoffset: -1.15px ;}
+		}
+
+		@keyframes dash-mask-above {
+			from   { stroke-dasharray:    0px 3px;
+					 stroke-dashoffset: -0.35px}
+			2.69%  { stroke-dasharray:    0px 3px;
+					 stroke-linecap: butt;}
+		 	2.691% { stroke-linecap: round; }
+			9.23%  { stroke-dasharray: 0.85px 3px; }
+			82.69% { stroke-dasharray: 0.85px 3px;
+					 stroke-dashoffset: -0.35px ;}
+			89.229%{ stroke-linecap: round; }
+			89.23% { stroke-dasharray:    0px 3px;
+					 stroke-dashoffset:   -1.2px;
+					 stroke-linecap: butt;}
+			to     { stroke-dasharray:    0px 3px;
+					 stroke-dashoffset:   -1.2px ;}
+		}
+
+		#flower .petal {
+			animation: dash 40s infinite;
+			animation-fill-mode: forwards;
+			animation-timing-function: linear;
+		}
+
+		#flower .petal.a,
+		#flower .petals.a .mask.under {animation-delay: -2s;}
+
+		#flower .petal.mask.under {
+			animation: dash-mask-under 40s infinite;
+			animation-timing-function: linear;
+		}
+
+		#flower .petal.mask.above {
+			animation: dash-mask-above 40s infinite;
+			animation-timing-function: linear;
+		}
+
+
+
+
+		/* Text content */
+
+		header {
+			flex-direction: column;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		header h1 {
+			font-size: 6rem;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<svg id="flower"
+		viewBox="0 0 50 50"
+		xmlns="http://www.w3.org/2000/svg" >
+		<!-- Inspiration from Flower to Korea logo -->
+		<defs>
+			<path
+				id="leaf"
+				d="
+					M 0.5 0.95
+					C 0.6 0.95, 0.85 0.85, 0.85 0.6
+					C 0.85 0.35, 0.6 0.1, 0.5 0
+					C 0.4 0.1, 0.15 0.35, 0.15 0.6
+					C 0.15 0.85, 0.4 0.95, 0.5 0.95
+					L 0.5 1
+				"
+				fill="none" />
+ 		</defs>
+		<g transform="translate(15, 5) scale(20)">
+			<g class="petals r">
+				<!-- Base layer green -->
+				<g transform="rotate(0, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal r" />
+				</g>
+				<g transform="rotate(120, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal r" />
+				</g>
+				<g transform="rotate(240, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal r" />
+				</g>
+			</g>
+			<g class="petals a">
+				<!-- Top layer orange, with bridges -->
+				<g transform="rotate(60, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal mask under"/>
+					<use xlink:href="#leaf" class="petal a" />
+				</g>
+				<g transform="rotate(180, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal mask under"/>
+					<use xlink:href="#leaf" class="petal a" />
+				</g>
+				<g transform="rotate(300, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal mask under"/>
+					<use xlink:href="#leaf" class="petal a" />
+				</g>
+			</g>
+			<g class="petals r">
+				<!-- Overlay green bridges -->
+				<g transform="rotate(0, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal mask under" />
+					<use xlink:href="#leaf" class="petal mask above r" />
+				</g>
+				<g transform="rotate(120, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal mask under" />
+					<use xlink:href="#leaf" class="petal mask above r" />
+				</g>
+				<g transform="rotate(240, 0.5, 1)">
+					<use xlink:href="#leaf" class="petal mask under" />
+					<use xlink:href="#leaf" class="petal mask above r" />
+				</g>
+			</g>
+
+		</g>
+	</svg>
+	<header>
+		<h1>Rebekka<br/>&amp;<br/>Axel
+		</h1>
+	</header>
+</body>
+</html>
