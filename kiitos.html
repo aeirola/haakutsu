@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png">
+	<meta name="theme-color" content="#f6f6ea">
+
+  <meta name="author" content="Axel Eirola">
+	<meta name="description" content="Kiitos!">
+
+  <title>Rebekka &amp; Axel &mdash; Kiitos</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style media="screen">
+    html, body {
+      background: #fffff8;
+    }
+
+		body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-size: 3rem;
+      color: #dd855c;
+    }
+
+    h1 {
+      margin: 3rem 2rem;
+    }
+
+    h2 {
+
+    }
+
+    @media screen and (min-width: 500pt) {
+      h1 {
+        font-size: 5rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 2rem;
+    }
+
+    hr {
+      margin: 4em auto;
+    }
+
+    hr:after {
+      background: #fffff8;
+
+    }
+
+    img {
+      cursor: pointer;
+    }
+
+    .attribution {
+      width: 100%;
+      opacity: 0.7;
+      font-size: 1rem;
+    }
+
+    .collage {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10em;
+    }
+
+    .collage h2 {
+      width: 100%;
+    }
+
+    .collage img, .collage iframe {
+      max-height: 60vh;
+      max-width: 60vw;
+      margin: 6vh 6vw;
+
+      padding: 2px;
+      border: 1px solid #726f81;
+    }
+
+    .collage img.small {
+      max-height: 30vh;
+      max-width: 30vw;
+      margin: 3vh 3vw;
+    }
+
+    .collage img.large {
+      max-height: 80vh;
+      max-width: 80vw;
+      margin: 8vh 8vw;
+    }
+
+    .collage img.fullscreen {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      max-width: 100vw;
+      max-height: 100vh;
+      margin: 0;
+    }
+
+    .collage .break {
+      width: 100%;
+    }
+
+    .collage .break .large {
+      height: 3em;
+    }
+
+    #modal {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      transition: 300ms ease-in-out;
+    }
+
+    #modal img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    #modal.hidden {
+      left: -100%;
+      right: 100%;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function init() {
+      var imageElements = document.body.getElementsByTagName('img');
+
+      for (var i = 0; i < imageElements.length ; i++) {
+        var imageElement = imageElements[i];
+        imageElement.addEventListener("click", onImageClick);
+      }
+
+      var verb = document.getElementById("verb");
+      verb.text = "tanssitte";
+    }
+
+    function onImageClick(event) {
+      var modalImage = document.getElementById("modal-image");
+      modalImage.src = event.target.src;
+      modalImage.alt = event.target.alt;
+
+      var modal = document.getElementById("modal");
+      modal.classList.remove("hidden");
+    }
+
+    function onModalClick(event) {
+      var modal = document.getElementById("modal");
+      modal.classList.add("hidden");
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
+</head>
+
+<body>
+  <h1>Kiitos</h1>
+
+  <p>
+    Kiitos kun iloitsitte kanssamme!
+  </p>
+
+  <svg id="flower"
+    viewBox="0 0 50 50"
+    xmlns="http://www.w3.org/2000/svg"
+    shape-rendering="optimizeSpeed">
+    <!-- Inspiration from Flower to Korea logo -->
+    <defs>
+      <path
+        id="leaf"
+        d="
+          M 0.5 0.95
+          C 0.6 0.95, 0.85 0.85, 0.85 0.6
+          C 0.85 0.35, 0.6 0.1, 0.5 0
+          C 0.4 0.1, 0.15 0.35, 0.15 0.6
+          C 0.15 0.85, 0.4 0.95, 0.5 0.95
+          L 0.5 1
+        "
+        fill="none" />
+      <mask id="mask">
+        <rect x="-0.5" y="-0.5"
+          width="2" height="2"
+          fill="white" />
+        <use xlink:href="#leaf"
+          transform="rotate(300, 0.5, 1)"
+          stroke="black"
+          stroke-width="0.12"
+          stroke-linecap="butt"
+          stroke-dasharray="0 0.5 0.5 3"/>
+      </mask>
+    </defs>
+    <g transform="translate(15, 5) scale(20)">
+      <use xlink:href="#leaf"
+        class="petal r"
+        mask="url(#mask)"
+        transform="rotate(0, 0.5, 1)"/>
+      <use xlink:href="#leaf"
+        class="petal r"
+        mask="url(#mask)"
+        transform="rotate(120, 0.5, 1)" />
+      <use xlink:href="#leaf"
+        class="petal r"
+        mask="url(#mask)"
+        transform="rotate(240, 0.5, 1)" />
+      <use xlink:href="#leaf"
+        class="petal a"
+        mask="url(#mask)"
+        transform="rotate(60, 0.5, 1)" />
+      <use xlink:href="#leaf"
+        class="petal a"
+        mask="url(#mask)"
+        transform="rotate(180, 0.5, 1)" />
+      <use xlink:href="#leaf"
+        class="petal a"
+        mask="url(#mask)"
+        transform="rotate(300, 0.5, 1)" />
+      </g>
+  </svg>
+
+  <p>
+    t. Rebekka ja Axel
+  </p>
+
+  <hr/>
+
+  <div class="collage">
+    <h2>Muistoja hääpäivästä</h2>
+
+    <img class="small" src="images/O23A8971.jpg">
+    <img class="small" src="images/O23A9037.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A9083.jpg">
+    <img class="small" src="images/O23A8961.jpg">
+    <div class="break"></div>
+    <img class="medium" src="images/O23A9169.jpg">
+    <img class="small" src="images/O23A9180.jpg">
+    <img class="small" src="images/O23A9194.jpg">
+    <img class="medium" src="images/O23A9215.jpg">
+    <img class="medium" src="images/O23A9225.jpg">
+    <img class="small" src="images/O23A9267.jpg">
+    <img class="medium" src="images/O23A9271.jpg">
+    <img class="small" src="images/O23A9274.jpg">
+    <img class="small" src="images/O23A9282.jpg">
+    <img class="small" src="images/O23A9293.jpg">
+    <img class="small" src="images/O23A9360.jpg">
+    <div class="break"></div>
+    <img class="medium" src="images/O23A9409.jpg">
+    <img class="large" src="images/O23A9589.jpg">
+    <img class="small" src="images/O23A9688.jpg">
+    <img class="small" src="images/O23A1088.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A9783.jpg">
+    <img class="medium" src="images/O23A9708.jpg">
+    <div class="break"></div>
+    <img class="medium" src="images/O23A9821.jpg">
+    <img class="small" src="images/O23A9856.jpg">
+    <div class="break"></div>
+    <img class="medium" src="images/O23A9924.jpg">
+    <img class="large" src="images/O23A0006.jpg">
+    <img class="large" src="images/O23A0177.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A0206.jpg">
+    <img class="small" src="images/O23A0214.jpg">
+    <img class="small" src="images/O23A0221.jpg">
+    <div class="break"></div>
+    <img class="medium" src="images/O23A0251.jpg">
+    <img class="small" src="images/O23A0313.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A0407.jpg">
+    <img class="small" src="images/O23A0440.jpg">
+    <div class="break"></div>
+    <img class="large" src="images/O23A0477.jpg">
+    <img class="medium" src="images/O23A0557.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A0678.jpg">
+    <img class="small" src="images/O23A0681.jpg">
+    <img class="large" src="images/O23A0685.jpg">
+    <img class="small" src="images/O23A0688.jpg">
+    <div class="break"></div>
+    <img class="large" src="images/O23A0841.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A0808.jpg">
+    <img class="small" src="images/O23A0889.jpg">
+    <div class="break"></div>
+    <img class="small" src="images/O23A1149.jpg">
+    <img class="small" src="images/O23A1151.jpg">
+    <img class="small" src="images/O23A1161.jpg">
+    <img class="large" src="images/O23A1164.jpg">
+    <img class="small" src="images/O23A1205.jpg">
+    <img class="small" src="images/O23A1226.jpg">
+    <img class="medium" src="images/O23A1268.jpg">
+    <img class="small" src="images/O23A1274.jpg">
+    <img class="small" src="images/O23A1314.jpg">
+    <img class="small" src="images/O23A1332.jpg">
+    <img class="small" src="images/O23A1336.jpg">
+    <img class="medium" src="images/O23A1362.jpg">
+    <img class="small" src="images/O23A1406.jpg">
+    <img class="small" src="images/O23A1428.jpg">
+    <img class="small" src="images/O23A1447.jpg">
+    <img class="medium" src="images/O23A1464.jpg">
+
+    <p class="attribution">Kiitos kuvista Tina Axelsson</p>
+
+    <hr/>
+
+    <iframe width="854" height="480"
+      src="https://www.youtube.com/embed/T1-_9hL-w1Q?rel=0&showinfo=0"
+      frameborder="0" allow="autoplay; encrypted-media"
+      allowfullscreen ></iframe>
+
+    <p class="attribution">
+      Kiitos musiikista Elina Eirola ja Emil Eirola
+      <br/>
+      Ja kiitos Jarno Rantanen videokuvasta
+    </p>
+  </div>
+
+  <div id="modal" class="hidden" onclick="onModalClick();">
+    <img id="modal-image" src="" alt="">
+  </div>
+</body>
+</html>
