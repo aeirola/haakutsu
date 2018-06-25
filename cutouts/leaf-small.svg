@@ -1,0 +1,35 @@
+<svg id="flower"
+	width="297" height="210"
+	viewBox="0 0 297 210"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" >
+	<!-- Inspiration from Flower to Korea logo -->
+	<defs>
+		<path
+			id="leaf"
+			d="
+				M 0.5 0.95
+				C 0.6 0.95, 0.85 0.85, 0.85 0.6
+				C 0.85 0.35, 0.6 0.1, 0.5 0
+				C 0.4 0.1, 0.15 0.35, 0.15 0.6
+				C 0.15 0.85, 0.4 0.95, 0.5 0.95
+				L 0.5 1
+			"
+			fill="none" />
+	</defs>
+	<rect fill="none" stroke="black" width="297" height="210" />
+	<g transform="translate(5, 10) scale(60)"
+		stroke="black"
+		stroke-width="0.08"
+		stroke-linecap="round">
+
+		<use xlink:href="#leaf" transform="translate(0, 0.2)"/>
+		<use xlink:href="#leaf" transform="translate(0, 1.7)" />
+		<use xlink:href="#leaf" transform="translate(1, 0.2)" />
+		<use xlink:href="#leaf" transform="translate(1, 1.7)" />
+		<use xlink:href="#leaf" transform="translate(2, 0.2)" />
+		<use xlink:href="#leaf" transform="translate(2, 1.7)" />
+		<use xlink:href="#leaf" transform="translate(3, 0.2)" />
+		<use xlink:href="#leaf" transform="translate(3, 1.7)" />
+	</g>
+</svg>
