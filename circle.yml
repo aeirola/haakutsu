@@ -10,5 +10,11 @@ jobs:
           command: >
             aws s3 sync . s3://rebekkaxel.fi  --delete
             --exclude '*' --include '*.html' --include '*.css' --include '*.png'
-            --include 'images/*' --include 'robots.txt'
+            --include 'robots.txt'
             --cache-control max-age=0,no-cache
+      - run:
+          name: Deploy images to AWS S3 bucket
+          command: >
+            aws s3 sync . s3://rebekkaxel.fi  --delete
+            --exclude '*' --include 'images/*'
+            --cache-control "public,max-age=31536000"
